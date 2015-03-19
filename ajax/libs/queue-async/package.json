@@ -1,6 +1,6 @@
 {
   "name": "queue-async",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A little helper for asynchronous JavaScript.",
   "filename": "queue.min.js",
   "keywords": [
@@ -23,5 +23,15 @@
   },
   "scripts": {
     "test": "node_modules/.bin/vows; echo"
-  }
+  },
+  "npmName": "queue-async",
+  "npmFileMap": [
+    {
+      "basePath": "/",
+      "files": [
+        "queue.min.js",
+        "queue.js"
+      ]
+    }
+  ]
 }

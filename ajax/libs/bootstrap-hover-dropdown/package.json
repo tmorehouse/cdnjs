@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-hover-dropdown",
-  "filename": "twitter-bootstrap-hover-dropdown.min.js",
-  "version": "2.0.1",
+  "filename": "bootstrap-hover-dropdown.min.js",
+  "version": "2.0.10",
   "description": "An unofficial Bootstrap plugin to enable Bootstrap dropdowns to activate on hover and provide a nice user experience.",
   "main": "./twitter-bootstrap-hover-dropdown.js",
   "keywords": [
@@ -18,4 +18,4 @@
     "name": "Cameron Spear",
     "web": "http://cameronspear.com"
   }
-} 
+}

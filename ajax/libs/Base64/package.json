@@ -1,14 +1,16 @@
 {
   "name": "Base64",
   "filename": "base64.min.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Base64 encoding and decoding",
   "author": "David Chambers <dc@davidchambers.me>",
   "main": "./base64.js",
-  "licenses": [{
-    "type": "WTFPL",
-    "url": "https://raw.github.com/davidchambers/Base64.js/master/LICENSE"
-  }],
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "https://raw.github.com/davidchambers/Base64.js/master/LICENSE"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/davidchambers/Base64.js.git"
@@ -17,5 +19,14 @@
     "coffee-script": "1.4.x",
     "mocha": "1.8.x",
     "uglify-js": "2.2.x"
-  }
+  },
+  "npmName": "Base64",
+  "npmFileMap": [
+    {
+      "basePath": "/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
 }

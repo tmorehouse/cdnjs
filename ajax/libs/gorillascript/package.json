@@ -1,6 +1,14 @@
 {
   "name": "gorillascript",
-  "npm-name": "gorillascript",
+  "npmName": "gorillascript",
+  "npmFileMap": [
+    {
+      "basePath": "/extras/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
   "filename": "gorillascript.min.js",
   "version": "0.9.10",
   "description": "A compile-to-JavaScript language designed to empower the user while attempting to prevent some common errors",

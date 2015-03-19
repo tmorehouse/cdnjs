@@ -2,7 +2,7 @@
   "name": "bluebird",
   "description": "Bluebird is a fully featured Promise library with focus on innovative features and performance.",
   "filename": "bluebird.min.js",
-  "version": "1.0.0",
+  "version": "2.9.14",
   "keywords": [
     "promise",
     "performance",
@@ -20,5 +20,14 @@
     "name": "Petka Antonov",
     "email": "petka_antonov@hotmail.com",
     "url": "http://github.com/petkaantonov/"
-  }
+  },
+  "npmName": "bluebird",
+  "npmFileMap": [
+    {
+      "basePath": "js/browser",
+      "files": [
+        "*"
+      ]
+    }
+  ]
 }

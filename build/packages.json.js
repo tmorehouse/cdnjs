@@ -2,16 +2,14 @@ var glob = require('glob');
 var fs = require('fs');
 var _ = require('underscore');
 var natcompare = require('./natcompare.js');
-
-
 var RSS = require('rss');
 var feed = new RSS({
     title:        'cdnjs.com - library updates',
-    description:  'Track when libraries are added and updated! Managed by <a href="http://twitter.com/ryan_kirkman">Ryan Kirkman</a> and <a href="http://twitter.com/neutralthoughts">Thomas Davis</a>. Sponsored and hosted by <a href="http://cloudflare.com">Cloudflare</a>',
+    description:  'Track when libraries are added and updated! Created by <a href="http://twitter.com/ryan_kirkman">Ryan Kirkman</a> and <a href="http://twitter.com/neutralthoughts">Thomas Davis</a>, managed by <a href="https://twitter.com/PeterDaveHello">Peter Dave Hello</a>. Sponsored and hosted by <a href="http://cloudflare.com">Cloudflare</a>',
     site_url:         'http://cdnjs.com/',
     feed_url:         'http://cdnjs.com/rss.xml',
     image_url:        'http://cdnjs.com/img/poweredbycloudflare.png',
-    copyright:    'Copyright © 2013 Cdnjs. All rights reserved',
+    copyright:    'Copyright © 2015 Cdnjs. All rights reserved',
     
     author: 'cdnjs team'
 });
@@ -19,24 +17,39 @@ var exec=require('child_process').exec;
 exec('git ls-tree -r --name-only HEAD | grep **/package.json | while read filename; do   echo "$(git log -1 --since="2 weeks ago" --name-status --format="%ad" -- $filename) blahcrap"; done',function(err,stdout,stderr){
     var recentLibraries = stdout.split('blahcrap');
     recentLibraries = _.filter(recentLibraries, function(lib){
+    //console.log(lib, 'a', lib.length);
       if(lib.length > 4) {
         return true;
       };
       return false;
-    })
+    });
+
     recentLibraries = _.map(recentLibraries, function(lib){
       lib = lib.replace('\n\n', '\n');
       lib = lib.replace('\t', '\n');
       lib = lib.substr(1);
       lib = lib.split('\n');
+
+
       lib[0] = new Date(lib[0]);
-      lib = {
-        date: lib[0],
-        change: lib[1],
-        path: lib[2].replace(/(^\s+|\s+$)/g, '')
+      if(lib[2]) {
+        lib = {
+          date: lib[0],
+          change: lib[1],
+          path: lib[2].replace(/(^\s+|\s+$)/g, '')
+        }
+      } else {
+        lib = null;
       }
       return lib;
     })
+    recentLibraries = _.filter(recentLibraries, function(lib){
+    //console.log(lib, 'a', lib.length);
+      if(lib === null) {
+        return false;
+      };
+      return true;
+    });
     recentLibraries = _.sortBy(recentLibraries, function(arrayElement) {
     //element will be each array, so we just return a date from first element in it
     return arrayElement.date.getTime();
@@ -60,10 +73,10 @@ exec('git ls-tree -r --name-only HEAD | grep **/package.json | while read filena
           date:           lib.date
       });
     })
-    fs.writeFileSync('rss', feed.xml(true), 'utf8');
+    fs.writeFileSync('../new-website/public/atom.xml', feed.xml(true), 'utf8');
+    fs.writeFileSync('../new-website/public/rss.xml', feed.xml(true), 'utf8');
 
 })
-
 
 
 var packages = Array();
@@ -78,7 +91,11 @@ glob("ajax/libs/**/package.json", function (error, matches) {
       temp.version = version.replace(/^.+\//, "");
       temp.files = glob.sync(version + "/**/*.*");
       for (var i = 0; i < temp.files.length; i++){
-        temp.files[i] = temp.files[i].replace(version + "/", "");
+        var filespec = temp.files[i];
+        temp.files[i] = {
+          name: filespec.replace(version + "/", ""),
+          size: Math.round(fs.statSync(filespec).size / 1024)
+        };
       }
       package.assets.push(temp);
     });
@@ -89,5 +106,6 @@ glob("ajax/libs/**/package.json", function (error, matches) {
     packages.push(package);
   });
   // Initialize the feed object
-  fs.writeFileSync('packages.json', JSON.stringify({"packages":packages}, null, 4), 'utf8');
+  fs.writeFileSync('../new-website/public/packages.json', JSON.stringify({"packages":packages}, null, 2), 'utf8');
+  fs.writeFileSync('../new-website/public/packages.min.json', JSON.stringify({"packages":packages}), 'utf8');
 });

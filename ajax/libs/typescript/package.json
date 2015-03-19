@@ -2,7 +2,7 @@
   "name": "typescript",
   "npm-name": "typescript",
   "filename": "typescript.min.js",
-  "version": "0.9.5",
+  "version": "1.0.0",
   "description": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript",
   "homepage": "http://www.typescriptlang.org",
   "keywords": [

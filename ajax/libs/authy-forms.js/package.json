@@ -1,7 +1,7 @@
 {
   "name": "authy-forms.js",
   "filename": "form.authy.min.js",
-  "version": "2.1",
+  "version": "2.2",
   "description": "Authy Form Helpers help you build your Registration and Verification forms to use Authy quicker",
   "homepage": "https://www.authy.com",
   "bugs": "https://github.com/authy/authy-form-helpers/issues",
@@ -10,10 +10,12 @@
     "authentication",
     "two factor authentication"
   ],
-  "maintainers": [{
-    "name": "Authy Inc",
-    "web": "https://www.authy.com"
-  }],
+  "maintainers": [
+    {
+      "name": "Authy Inc",
+      "web": "https://www.authy.com"
+    }
+  ],
   "contributors": [
     {
       "name": "Johanna Mantilla Duque"
@@ -25,10 +27,12 @@
       "name": "Daniel Palacio"
     }
   ],
-  "repositories": [{
-    "type": "git",
-    "url": "https://github.com/authy/authy-form-helpers"
-  }],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/authy/authy-form-helpers"
+    }
+  ],
   "licenses": [
     {
       "type": "MIT",

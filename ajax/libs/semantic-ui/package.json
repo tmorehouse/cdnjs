@@ -1,17 +1,26 @@
 {
-    "name": "semantic-ui",
-    "filename": "javascript/semantic.min.js",
-    "version": "0.12.0",
-    "description": "Semantic empowers designers and developers by creating a language for sharing UI",
-    "homepage": "http://semantic-ui.com/",
-    "keywords": [
-       "semantic",
-       "ui"
-   ],
-   "repositories": [
-       {
-           "type": "git",
-           "url": "https://github.com/jlukic/Semantic-UI"
-       }
-   ]
+  "name": "semantic-ui",
+  "filename": "semantic.min.js",
+  "version": "1.11.4",
+  "description": "Semantic empowers designers and developers by creating a language for sharing UI",
+  "homepage": "http://semantic-ui.com/",
+  "keywords": [
+    "semantic",
+    "ui"
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Semantic-Org/Semantic-UI"
+    }
+  ],
+  "npmName": "semantic-ui",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "**"
+      ]
+    }
+  ]
 }

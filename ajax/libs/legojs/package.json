@@ -4,12 +4,14 @@
   "filename": "lego.min.js",
   "version": "0.0.1",
   "npmName": "legojs",
-  "npmFileMap": [{
-    "basePath": "/",
-    "files": [
-      "lego.min.js"
-    ]
-  }],
+  "npmFileMap": [
+    {
+      "basePath": "/",
+      "files": [
+        "lego.min.js"
+      ]
+    }
+  ],
   "author": {
     "name": "Tyler Benziger",
     "url": "http://tybenz.com"

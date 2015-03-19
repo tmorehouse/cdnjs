@@ -1,23 +1,49 @@
 {
-    "name": "reveal.js",
-    "filename": "js/reveal.min.js",
-    "version": "2.6",
-    "description": "A framework for easily creating beautiful presentations using HTML",
-    "homepage": "http://lab.hakim.se/reveal-js/",
-    "keywords": [
-       "presentations",
-       "slides"
-   ],
-   "maintainers": [
-       {
-           "name": "Hakim El Hattab",
-           "web": "http://hakim.se/"
-       }
-   ],
-   "repositories": [
-       {
-           "type": "git",
-           "url": "https://github.com/hakimel/reveal.js.git"
-       }
-   ]
+  "name": "reveal.js",
+  "filename": "js/reveal.min.js",
+  "version": "3.0.0",
+  "description": "A framework for easily creating beautiful presentations using HTML",
+  "homepage": "http://lab.hakim.se/reveal-js/",
+  "keywords": [
+    "reveal.js",
+    "reveal",
+    "presentations",
+    "slides"
+  ],
+  "maintainers": [
+    {
+      "name": "Hakim El Hattab",
+      "email": "hakim.elhattab@gmail.com",
+      "web": "http://hakim.se/"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/hakimel/reveal.js.git"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/hakimel/reveal.js/blob/master/LICENSE"
+    }
+  ],
+  "autoupdate": {
+    "source": "git",
+    "target": "git://github.com/hakimel/reveal.js.git",
+    "basePath": "",
+    "files": [
+      "css/*/*.css",
+      "css/*.css",
+      "js/*.js",
+      "lib/*/*.js",
+      "lib/*/*.css",
+      "lib/*/*/*.css",
+      "lib/*/*/*.eot",
+      "lib/*/*/*.ttf",
+      "lib/*/*/*.woff",
+      "plugin/*/*.js"
+    ]
+  }
 }
